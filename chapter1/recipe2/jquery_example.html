@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+    Enter your name: <input type="text"></input>
+    <p id="name"></p>
+
+    <script>
+      $(document).ready(function() {
+        $("input").keypress(function() {
+          $("#name").text($(this).val());
+        });  
+      });
+    </script>
+
+  </body>
+</html>

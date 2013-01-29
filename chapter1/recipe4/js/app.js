@@ -1,7 +1,11 @@
 function MyCtrl($scope) {
-  $scope.style = "";
+  $scope.visible = true;
 
-  $scope.showAlert = function() {
-    $scope.style = "error-alert";
+  $scope.toggle = function() {
+    $scope.visible = !$scope.visible;
+  };
+
+  $scope.isVisible = function() {
+    return $scope.visible === true;
   };
 }

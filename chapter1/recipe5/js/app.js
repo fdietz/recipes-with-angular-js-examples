@@ -1,7 +1,9 @@
-function MyCtrl($scope) {
-  $scope.visible = true;
+var app = angular.module("MyApp", []);
 
-  $scope.toggle = function() {
-    $scope.visible = !$scope.visible;
+app.directive("helloWorld", function() {
+  return {
+    restrict: "E",
+    replace: true,
+    template: '<span>Hello World</span>'
   };
-}
+});
