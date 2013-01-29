@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      .error-alert {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body ng-app>
+    <div ng-controller="MyCtrl">
+      <p ng-click="showAlert()" class="{{style}}">Hello World!</p>
+    </div>
+  </body>
+</html>
