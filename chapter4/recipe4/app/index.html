@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" ng-app="MyApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-init="data = true">
+  <p>{{ data | checkmark}}</p>
+  <p>{{ !data | checkmark}}</p>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

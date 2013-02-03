@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-locale_de.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body ng-app>
+    <input type="text" ng-model="amount" placeholder="Enter amount"/>
+    <p>Default Currency: {{ amount | currency }}</p>
+    <p>Custom Currency: {{ amount | currency: "Euro €" }}</p>
+  </body>
+</html>

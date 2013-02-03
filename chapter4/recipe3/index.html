@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body ng-app="MyApp">
+    <ul ng-init="names = ['Peter', 'Anton', 'John']">
+      <li ng-repeat="name in names | exclude:'Peter'">
+        <span>{{name}}</span>
+      </li>
+    </ul>
+  </body>
+</html>
