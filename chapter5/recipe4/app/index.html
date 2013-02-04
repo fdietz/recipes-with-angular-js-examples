@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="MyApp">
+  <div ng-controller="MyCtrl">
+    <input type="text" ng-model="searchTerm" placeholder="Search term">
+    <button ng-click="search()">Search</button>
+    <ul ng-repeat="tweet in searchResult.results">
+      <li>{{tweet.text}}</li>
+    </ul>
+  </div>  
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
