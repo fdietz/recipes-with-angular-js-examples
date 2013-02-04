@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+      <input type="text" ng-model="searchTerm" placeholder="Search term">
+      <button ng-click="search()">Search</button>
+      <ul ng-repeat="tweet in searchResult.results">
+        <li>{{tweet.text}}</li>
+      </ul>
+    </div>  
+  </body>
+</html>
