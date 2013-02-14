@@ -1,15 +1,8 @@
 extends layout
 
 block body
-  div(ng-controller="PostIndexCtrl")
-    h3 List of posts
-    ul
-      li(ng-repeat="post in posts")
-        span {{post.title}}
-          a(ng-click="remove(post)") Delete
-
-  div(ng-controller="PostShowCtrl")
-    p A Single Post: {{post.title}}
+  h1 HTML5 Route Example
+  ng-view
 
   script(src='js/lib/angular/angular.js')
   script(src='js/lib/angular/angular-resource.js')

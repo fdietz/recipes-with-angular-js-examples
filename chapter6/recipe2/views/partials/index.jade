@@ -1,0 +1,4 @@
+p This is the index partial
+ul(ng-repeat="person in persons")
+  li
+    a(href="/persons/{{person.id}}"){{person.name}}
