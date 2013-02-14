@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+      input.ng-invalid.ng-dirty {
+        background-color: red;
+      }
+      input.ng-valid.ng-dirty {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body ng-app="MyApp">
+    <div ng-controller="User">
+      <form name="form" ng-submit="submit()" class="form-horizontal">
+        <label>Firstname</label>
+        <input name="firstname" type="text" ng-model="user.firstname" required/>
+        <p ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</p>
+        <label>Lastname</label>
+        <input type="text" ng-model="user.lastname" required/>
+        <label>Age</label>
+        <input type="text" ng-model="user.age"/>
+        <br>
+        <button ng-disabled="form.$invalid" class="btn">Submit</button>
+      </form>
+
+      User Model: {{user}}
+      <br>
+      Form was submitted: {{wasSubmitted}}
+      <br>
+      Firstname input valid: {{form.firstname.$valid}}
+      <br>
+      Firstname validation error: {{form.firstname.$error}}
+      <br>
+      Form valid: {{form.$valid}}
+      <br>
+      Form validation error: {{form.$error}}
+    </div>
+  </body>
+</html>
