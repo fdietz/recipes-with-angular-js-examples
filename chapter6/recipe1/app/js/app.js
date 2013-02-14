@@ -34,9 +34,6 @@ app.controller("IndexCtrl", function($scope, Person) {
   $scope.persons = Person.all();
 });
 
-app.controller("ShowCtrl", function($scope, $routeParams, $location, Person) {
+app.controller("ShowCtrl", function($scope, $routeParams, Person) {
   $scope.person = Person.get($routeParams.id);
-  $scope.back = function() {
-    $location.url("/persons");
-  };
 });
