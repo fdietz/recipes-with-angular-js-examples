@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="MyApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="MainCtrl">
+  <ul class="menu">
+    <li ng-class="menuClass('persons')"><a href="#!persons">Home</a></li>
+    <li ng-class="menuClass('help')"><a href="#!help">Help</a></li>
+    <li ng-class="menuClass('login')"><a href="#!login">Login</a></li>
+  </ul>
+  <h1>Routing Example</h1>
+  <ng-view></ng-view>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
