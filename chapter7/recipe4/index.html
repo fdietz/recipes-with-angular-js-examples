@@ -3,27 +3,31 @@
     <script src="js/angular.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <style type="text/css">
-      input.ng-invalid.ng-dirty {
-        background-color: red;
-      }
-      input.ng-valid.ng-dirty {
-        background-color: green;
-      }
-    </style>
   </head>
   <body ng-app="MyApp">
     <div ng-controller="User">
-      <form name="form" ng-submit="submit()" class="form-horizontal">
-        <label>Firstname</label>
-        <input name="firstname" type="text" ng-model="user.firstname" required/>
-        <p ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</p>
-        <label>Lastname</label>
-        <input type="text" ng-model="user.lastname" required/>
-        <label>Age</label>
-        <input type="text" ng-model="user.age"/>
-        <br>
-        <button ng-disabled="form.$invalid" class="btn">Submit</button>
+      <form name="form" ng-submit="submit()" novalidate>
+        <div class="control-group" ng-class="error('firstname')">
+          <label class="control-label" for="firstname">Firstname</label>
+          <div class="controls">
+            <input id="firstname" name="firstname" type="text" ng-model="user.firstname" placeholder="Firstname" required/>
+            <span class="help-block" ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</span>
+          </div>
+        </div>
+
+        <div class="control-group" ng-class="error('lastname')">
+          <label class="control-label" for="lastname">Lastname</label>
+          <div class="controls">
+            <input id="lastname" name="lastname" type="text" ng-model="user.lastname" placeholder="Lastname" required/>
+            <span class="help-block" ng-show="form.lastname.$invalid && form.lastname.$dirty">Lastname is required</span>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <button ng-disabled="form.$invalid" class="btn">Submit</button>
+          </div>
+        </div>
       </form>
 
       User Model: {{user}}

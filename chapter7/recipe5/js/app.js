@@ -1,14 +1,8 @@
-var app = angular.module("MyApp", ["ui", "ui.directives"]);
+var app = angular.module("MyApp", []);
 
 app.controller("User", function($scope) {
   $scope.user = {};
   $scope.wasSubmitted = false;
-
-  $scope.blacklist = ['idiot','looser'];
-
-  $scope.notBlackListed = function(value) {
-    return $scope.blacklist.indexOf(value) === -1;
-  };
 
   $scope.submit = function() {
     $scope.wasSubmitted = true;

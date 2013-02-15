@@ -7,4 +7,9 @@ app.controller("User", function($scope) {
   $scope.submit = function() {
     $scope.wasSubmitted = true;
   };
+
+  $scope.error = function(name) {
+    var s = $scope.form[name];
+    return s.$invalid && s.$dirty ? "error" : "";
+  };
 });

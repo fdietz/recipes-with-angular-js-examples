@@ -1,7 +1,6 @@
 <html>
   <head>
     <script src="js/angular.js"></script>
-    <script src="js/angular-ui.js"></script>
     <script src="js/app.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <style type="text/css">
@@ -15,11 +14,14 @@
   </head>
   <body ng-app="MyApp">
     <div ng-controller="User">
-      <form name="form" ng-submit="submit()" class="form-horizontal">
+      <form name="form" ng-submit="submit()" class="form-horizontal" novalidate novalidate>
         <label>Firstname</label>
-        <input name="firstname" type="text" ng-model="user.firstname" required ui-validate=" { blacklisted: 'notBlackListed($value)' } "/>
+        <input name="firstname" type="text" ng-model="user.firstname" required/>
         <p ng-show="form.firstname.$invalid && form.firstname.$dirty">Firstname is required</p>
-        <p ng-show='form.firstname.$error.blacklisted'>This firstname is blacklisted.</p>
+        <label>Lastname</label>
+        <input type="text" ng-model="user.lastname" required/>
+        <label>Age</label>
+        <input type="text" ng-model="user.age"/>
         <br>
         <button ng-disabled="form.$invalid" class="btn">Submit</button>
       </form>

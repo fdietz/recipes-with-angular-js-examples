@@ -6,7 +6,7 @@
   </head>
   <body ng-app="MyApp">
     <div ng-controller="User">
-      <form name="form" ng-submit="submit()" class="form-horizontal">
+      <form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
         <label>Firstname</label>
         <input name="firstname" type="text" ng-model="user.firstname" required/>
         <label>Lastname</label>
