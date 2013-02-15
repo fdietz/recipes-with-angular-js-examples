@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      .nested {
+        border: 1px solid red;
+        margin-left: 2em;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+      <ul ng-repeat="user in users">
+        <li>{{user}}</li>
+      </ul>
+      <div class="nested" ng-controller="AnotherCtrl">
+        First user: {{firstUser}}
+      </div>
+    </div>
+  </body>
+</html>
