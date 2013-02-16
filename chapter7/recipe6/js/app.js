@@ -4,7 +4,7 @@ app.controller("User", function($scope) {
   $scope.user = {};
   $scope.wasSubmitted = false;
 
-  $scope.blacklist = ['idiot','looser'];
+  $scope.blacklist = ['idiot','loser'];
 
   $scope.notBlackListed = function(value) {
     return $scope.blacklist.indexOf(value) === -1;
