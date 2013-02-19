@@ -7,11 +7,30 @@
   </head>
   <body ng-app="MyApp">
     <div ng-controller="MyCtrl">
+
+      <h3>Filter by String</h3>
       <form class="form-inline">
-        <input ng-model="query" type="text" placeholder="Filter by" autofocus>
+        <input ng-model="query" type="text" placeholder="Filter by name" autofocus>
       </form>
-      <ul ng-repeat="friend in friends | filter:query | orderBy: 'name' ">
-        <li>{{friend.name}}</li>
+      <ul ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+        <li>{{friend.name}} ({{friend.age}})</li>
+      </ul>
+    </div>
+
+    <div ng-controller="MyCtrl">
+      <h3>Filter by Object</h3>
+      <form class="form-inline">
+        <input ng-model="query" type="text" placeholder="Filter by name and age=20">
+      </form>
+      <ul ng-repeat="friend in friends | filter: { name: query, age: '20' } | orderBy: 'name' ">
+        <li>{{friend.name}} ({{friend.age}})</li>
+      </ul>
+    </div>
+
+    <div ng-controller="MyCtrl">
+      <h3>Filter by Predicate Function</h3>
+      <ul ng-repeat="friend in friends | filter: filterFunction | orderBy: 'name' ">
+        <li>{{friend.name}} ({{friend.age}})</li>
       </ul>
     </div>
   </body>
