@@ -10,7 +10,7 @@
 
     <button class="btn" ng-click="open()">Open Modal</button>
 
-    <div modal="showModal" close="close()">
+    <div modal="showModal" close="cancel()">
       <div class="modal-header">
           <h4>Modal Dialog</h4>
       </div>
@@ -18,7 +18,8 @@
           <p>Example paragraph with some text.</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-success" ng-click="close()">Close</button>
+        <button class="btn btn-success" ng-click="ok()">Okay</button>
+        <button class="btn" ng-click="cancel()">Cancel</button>
       </div>
     </div>
 
