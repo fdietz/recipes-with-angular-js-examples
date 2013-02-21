@@ -1,10 +1,10 @@
 Contacts::Application.routes.draw do
 
-  root :to => "contacts#index"
+  root :to => "layouts#index"
 
   scope "api" do
     resources :contacts
   end
 
-  match "*path" => "contacts#index"
+  match "*path" => "layouts#index"
 end
