@@ -1,0 +1,37 @@
+<h3>Contact Details</h3>
+
+<form name="form" ng-submit="submit()" class="form-horizontal" novalidate>
+
+  <div class="control-group" ng-class="errorClass('firstname')">
+    <label class="control-label" for="firstname">Firstname</label>
+    <div class="controls">
+      <input ng-model="contact.firstname" type="text" name="firstname"placeholder="Firstname" required autofocus>
+    </div>
+  </div>
+
+  <div class="control-group" ng-class="errorClass('lastname')">
+    <label class="control-label" for="lastname">Lastname</label>
+    <div class="controls">
+      <input ng-model="contact.lastname" type="text" name="lastname" placeholder="Lastname" required>
+    </div>
+  </div>
+
+  <div class="control-group" ng-class="errorClass('age')">
+    <label class="control-label" for="age">Age</label>
+    <div class="controls">
+      <input ng-model="contact.age" type="text" name="age" placeholder="Age" required>
+      <span class="help-block" ng-show="form.age.$invalid && form.age.$dirty">
+        {{errorMessage('age')}}
+      </span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <a class="btn" ng-click="cancel()">Cancel</a>
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+  </div>
+</form>
+
+<a href="/contacts/{{contact.id}}">Back</a>

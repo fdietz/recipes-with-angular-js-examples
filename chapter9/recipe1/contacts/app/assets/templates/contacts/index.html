@@ -1,0 +1,33 @@
+<h3>Contacts</h3>
+
+<table class="table table-striped">
+  <thead>
+    <td>Id</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Age</td>
+    <td>Actions</td>
+  </thead>
+  <tbody>
+    <tr ng-repeat="contact in contacts">
+      <td>
+        {{contact.id}}
+      </td>
+      <td>
+        {{contact.firstname}}
+      </td>
+      <td>
+        {{contact.lastname}}
+      </td>
+      <td>
+        {{contact.age}}
+      </td>
+      <td>
+        <a href="/contacts/{{contact.id}}">Show</a> |
+        <a href="/contacts/{{contact.id}}/edit">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button ng-click="new()" class="btn btn-success">New Contact</button>
