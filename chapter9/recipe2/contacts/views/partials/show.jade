@@ -1,0 +1,18 @@
+h3 Contact Details
+
+div
+  h5 First Name
+  {{contact.firstname}}
+
+  h5 Last Name
+  {{contact.lastname}}
+
+  h5 Age
+  {{contact.age}}
+
+hr
+
+div
+  a(href="/contacts") Back
+  |
+  a(href="/contacts/{{contact._id}}/edit") Edit

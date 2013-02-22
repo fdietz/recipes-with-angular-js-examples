@@ -1,0 +1,24 @@
+h3 Contact Details
+
+form.form-horizontal(name="form", ng-submit="submit()", novalidate)
+  .control-group(ng-class="errorClass('firstname')")
+    label.control-label(for="firstname") First Name
+    .controls
+      input(ng-model="contact.firstname", type="text", name="firstname", placeholder="First Name", require, autofocus)
+
+  .control-group(ng-class="errorClass('lastname')")
+    label.control-label(for="lastname") Last Name
+    .controls
+      input(ng-model="contact.lastname", type="text", name="lastname", placeholder="Last Name", require)
+
+  .control-group(ng-class="errorClass('age')")
+    label.control-label(for="age") Age
+    .controls
+      input(ng-model="contact.age", type="text", name="age", placeholder="Age Name", require)
+
+  .control-group
+    .controls
+      a.btn(ng-click="cancel()") Cancel
+      button.btn.btn-success(type="submit") Save
+
+a(href="/contacts/{{contact.id}}") Back
