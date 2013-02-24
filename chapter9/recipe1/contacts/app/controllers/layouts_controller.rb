@@ -1,5 +1,5 @@
 class LayoutsController < ApplicationController
   def index
-    render :text => "", :layout => "application"
+    render "layouts/application"
   end
 end

@@ -13,34 +13,25 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-
-    respond_to do |format|
-      if @contact.save
-        format.json { render json: @contact, status: :created, location: @contact }
-      else
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+    if @contact.save
+      render json: @contact, status: :created, location: @contact
+    else
+      render json: @contact.errors, status: :unprocessable_entity
     end
   end
 
   def update
     @contact = Contact.find(params[:id])
-
-    respond_to do |format|
-      if @contact.update_attributes(params[:contact])
-        format.json { head :no_content }
-      else
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
+    if @contact.update_attributes(params[:contact])
+      head :no_content
+    else
+      render json: @contact.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    head :no_content
   end
 end

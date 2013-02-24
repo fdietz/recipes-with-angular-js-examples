@@ -18,12 +18,10 @@ app.controller("ContactsEditCtrl", function($scope, $routeParams, $location, Con
       console.log("failure", response)
 
       _.each(response.data, function(errors, key) {
-        if (errors.length > 0) {
-          _.each(errors, function(e) {
-            $scope.form[key].$dirty = true;
-            $scope.form[key].$setValidity(e, false);
-          });
-        }
+        _.each(errors, function(e) {
+          $scope.form[key].$dirty = true;
+          $scope.form[key].$setValidity(e, false);
+        });
       });
     }
 
