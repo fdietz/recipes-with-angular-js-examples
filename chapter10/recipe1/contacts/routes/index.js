@@ -1,5 +1,5 @@
 exports.index = function(req, res){
-  res.render('index');
+  res.render('layout');
 };
 
 exports.partials = function (req, res) {
