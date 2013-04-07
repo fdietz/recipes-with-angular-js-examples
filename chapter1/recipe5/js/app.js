@@ -1,9 +1,11 @@
 var app = angular.module("MyApp", []);
 
-app.directive("helloWorld", function() {
+app.directive("show", function() {
   return {
-    restrict: "E",
-    replace: true,
-    template: '<span>Hello World</span>'
+    link: function(scope, element, attrs) {
+      scope.$watch(attrs.show, function(value){
+        element.css('display', value ? '' : 'none');
+      });
+    }
   };
 });

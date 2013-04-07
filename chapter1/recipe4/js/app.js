@@ -4,8 +4,4 @@ function MyCtrl($scope) {
   $scope.toggle = function() {
     $scope.visible = !$scope.visible;
   };
-
-  $scope.isVisible = function() {
-    return $scope.visible === true;
-  };
 }

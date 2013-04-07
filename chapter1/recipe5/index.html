@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body ng-app="MyApp">
-    <hello-world/>
+    <label for="checkbox"><input id="checkbox" type="checkbox" ng-model="visible">Toggle me</label>
+    <div show="visible">
+      <p>Hello World</p>
+    </div>
   </body>
 </html>
