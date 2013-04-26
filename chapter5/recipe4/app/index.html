@@ -6,15 +6,22 @@
 </head>
 <body ng-app="MyApp">
   <div ng-controller="MyCtrl">
-    <input type="text" ng-model="searchTerm" placeholder="Search term">
-    <button ng-click="search()">Search</button>
-    <ul ng-repeat="tweet in searchResult.results">
-      <li>{{tweet.text}}</li>
-    </ul>
-  </div>  
+
+    <h3>Nested $http calls Test</h3>
+    <button ng-click="nestedTest()">Nested $http calls Test</button>
+    <p>Combined Result: {{combinedNestedResult}}</p>
+
+    <h3>$q.all Test</h3>
+    <button ng-click="allTest()">$q.all() Test</button>
+    <p>Combined Result: {{combinedResult}}</p>
+
+    <h3>Deferred Timer Test</h3>
+    <input type="checkbox" ng-model="success" ng-checked="success"> Toggle Success/Failure
+    <button ng-click="startDeferredTimer(success)">Start Test</button>
+    <p>1 sec Timer Result: {{deferredTimerResult}}</p>
+  </div>
 
   <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-resource.js"></script>
   <script src="js/controllers.js"></script>
 </body>
 </html>
