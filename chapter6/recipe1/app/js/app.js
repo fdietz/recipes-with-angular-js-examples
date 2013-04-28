@@ -2,8 +2,8 @@ var app = angular.module("MyApp", []).
   config(function($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('!');
     $routeProvider.
-      when("/persons", { templateUrl: "partials/index.html" }).
-      when("/persons/:id", { templateUrl: "partials/show.html", controller: "ShowCtrl" }).
+      when("/persons", { templateUrl: "partials/person_list.html" }).
+      when("/persons/:id", { templateUrl: "partials/person_details.html", controller: "ShowCtrl" }).
       otherwise( { redirectTo: "/persons" });
 });
 
