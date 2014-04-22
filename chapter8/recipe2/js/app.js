@@ -21,13 +21,21 @@ app.controller("PaginationCtrl", function($scope) {
     var rangeSize = 5;
     var ret = [];
     var start;
-
+    var end;
+    
     start = $scope.currentPage;
-    if ( start > $scope.pageCount()-rangeSize ) {
+    if ( start > $scope.pageCount()-rangeSize && $scope.pageCount()-rangeSize>0) {
       start = $scope.pageCount()-rangeSize+1;
     }
 
-    for (var i=start; i<start+rangeSize; i++) {
+    if($scope.pageCount()>rangeSize){
+    	end = start+rangeSize;
+    }else{
+    	start = 0;
+    	end = $scope.pageCount()+1;
+    }
+	    
+    for (var i=start; i<end; i++) {
       ret.push(i);
     }
     return ret;
