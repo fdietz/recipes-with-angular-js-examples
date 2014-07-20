@@ -1,13 +1,17 @@
 var app = angular.module("MyApp", []);
 
-app.filter("exclude", function() {
-  return function(input, exclude) {
-    var result = [];
+app.filter("reverse", function() {
+  return function(input, options) {
+    input = input || "";
+    var result = "";
+    var suffix = options["suffix"] || "";
+
     for (var i=0; i<input.length; i++) {
-      if (input[i] !== exclude) {
-        result.push(input[i]);
-      }
+      result = input.charAt(i) + result;
     }
+
+    if (input.length > 0) result += suffix;
+
 
     return result;
   };
