@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body ng-app="MyApp">
-    <input type="text" ng-model="text" placeholder="Enter text"/>
-    <p>Input: {{ text }}</p>
-    <p>Filtered input: {{ text | reverse: { suffix: "!"} }}</p>
+    <ul ng-init="names = ['Peter', 'Anton', 'John']">
+      <li ng-repeat="name in names | exclude:'Peter'">
+        <span>{{name}}</span>
+      </li>
+    </ul>
   </body>
 </html>
