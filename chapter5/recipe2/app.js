@@ -36,7 +36,7 @@ app.get('/api/posts', function (req, res) {
 });
 
 app.get('/api/posts/:id', function (req, res) {
-  var id = req.params.id;
+  var id = parseInt(req.params.id, 10);
   if (id >= 0 && id < data.length) {
     data.forEach(function(post, index) {
       if (post.id === id) return res.json(post);
@@ -47,10 +47,10 @@ app.get('/api/posts/:id', function (req, res) {
 });
 
 app.delete('/api/posts/:id', function (req, res) {
-  var id = req.params.id;
+  var id = parseInt(req.params.id, 10);
   if (id >= 0 && id <= data.length) {
     data.forEach(function(post, index) {
-      if (post.id == id) {
+      if (post.id === id) {
         data.splice(index, 1);
       }
     });
