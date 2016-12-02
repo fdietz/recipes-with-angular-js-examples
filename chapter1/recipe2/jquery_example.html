@@ -9,7 +9,7 @@
 
     <script>
       $(document).ready(function() {
-        $("input").keypress(function() {
+        $("input").keyup(function() {
           $("#name").text($(this).val());
         });  
       });
